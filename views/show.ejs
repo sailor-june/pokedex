@@ -4,7 +4,13 @@
 <%- include('./partials/head.ejs') %>
 
 <body><div class="cell">
-    <img src="<%= id.img%>"/>
+    <img src="<% if (id.img){
+        %> <%=
+             id.img
+             %>
+        <%}else{%>
+            pokeball.png
+            <%}%> ">
     #<%= id.id %> <%= id.name%> 
     <br>
     <%= id.misc.classification %>

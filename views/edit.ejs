@@ -5,13 +5,17 @@
     
     <div class="cell">
         <p>EDIT POKEMON</p>
-        <form action="/pokemon/<%= id %>?_method=PUT" method="post">
+        <form action="/pokemon/<%= index %>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%= id.name %> " /> Type:
-        <input type="text" name="type" value="<%= id.type%>" /> Classification:
+        <input 
+        type="text" 
+        name="type" 
+        value="<%=id.type%>" />
+         Classification:
         <input
           type="text"
           name="classification"
-          value="<%= id.misc.classification %>"
+          value="<%=id.misc.classification %>"
         />
         <input type="submit" name="" value="Submit Changes" />
       </form>

@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+
 <%- include('./partials/head.ejs') %>
-  <body>
-    <h1> Gen 1</h1>
+  
+
+<body>
+    <div class="header">
+        <a href="/pokemon/new">make a new pokemon</a>
+    </div>   
     <div class=container>
     <% for (let i=0;i<allPokes.length;i++){ %>
     <div class="cell">
     <a href="/pokemon/<%=i%>">
+   
     <img class="index-photo"
-      src="<%=
+   src= "<% if (allPokes[i].img){
+    %> <%=
          allPokes[i].img
-         %>"
-    />
+         %>
+    <%}else{%>
+        pokeball.png
+        <%}%> "/> 
     </a><div class="info">
     #<%= allPokes[i].id%> <%= allPokes[i].name%>
     </div>
