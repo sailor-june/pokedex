@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+  <body>
+    <div class=container>
+    <% for (let i=0;i<151;i++){ %>
+    <div class="cell">
+    <img class="index-photo"
+      src="<%=
+         allPokes[i].img
+         %>"
+    />
+    #<%= allPokes[i].id%> <%= allPokes[i].name%>
+    </div> 
+    <%}%>
+
+    </div>
+  </body>
+</html>
