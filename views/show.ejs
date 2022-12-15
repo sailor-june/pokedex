@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAME</title>
-</head>
-<body>
     
+<%- include('./partials/head.ejs') %>
+
+<body><div class="cell">
+    <img src="<%= id.img%>"/>
+    #<%= id.id %> <%= id.name%> 
+    <br>
+    <%= id.misc.classification %>
+    <br>
+    type: <%= id.type%>
+    <br>
+    <a href="/pokemon/<%= parseInt(id.id)-1%>/edit">Edit this pokemon</a>
+    <form action="/pokemon/<%= parseInt(id.id)-1%>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete this pokemon" /></form>
+    <a href="/pokemon">Return Home</a>
+    </div>
 </body>
 </html>

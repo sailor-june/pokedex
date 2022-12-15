@@ -3,24 +3,33 @@ body{
    display: flex;
    justify-content: center;
    align-content: center;
+   text-align: center;
    
 }
 .container{
 display: flex;
 flex-wrap: wrap;
-max-width: 100vw;
+margin-top: 10vh;
+max-width: 80vw;
 justify-content: center;
 }
 .cell{
+    padding: 3%;
     border-style: groove;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     margin: 0;
-    width:9%
+    width: 9%;
+    text-align: center;
 }
-.index-photo{
-max-width: 100px;
-max-height:100px;
+.cell img{
+max-width: 90%;
+max-height:90%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
 }

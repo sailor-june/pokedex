@@ -1,35 +1,42 @@
 const PORT = 3000;
 
+const methodOverride = require("method-override");
+
 const express = require("express");
 const pokemon = require("./models/pokemon.js");
 const app = express();
 
 app.use(express.static("public"));
 
+app.use(methodOverride("_method"));
+
 //Index
 
 app.get("/pokemon", (req, res) => {
-  res.render('index.ejs', {
-    allPokes:pokemon
+  res.render("index.ejs", {
+    allPokes: pokemon,
   });
-
 });
 
 //Show
 
 app.get("/pokemon/:id", (req, res) => {
-  res.render('show.ejs')
+  res.render("show.ejs", {
+    id: pokemon[req.params.id],
+  });
 });
 //New
 
-app.get("pokemon/new", (req, res) => {
-  console.log("new");
+app.get("/pokemon/new", (req, res) => {
+  res.render("new.ejs");
 });
 
 //Edit
 
-app.get("pokemon/:id/edit", (req, res) => {
-  console.log("edit");
+app.get("/pokemon/:id/edit", (req, res) => {
+  res.render("edit.ejs", {
+    id: pokemon[req.params.id],
+  });
 });
 
 ///Create
@@ -39,16 +46,17 @@ app.post("/pokemon", (req, res) => {
 });
 
 //Update
-
 app.put("/pokemon/:id", (req, res) => {
-  console.log("update");
+  
+  pokemon[req.params.id] = req.body;
 });
 
 //Destroy
-
 app.delete("/pokemon/:id", (req, res) => {
-  console.log("del");
-});
+  pokemon.splice(req.params.id, 1);
+  res.redirect('/pokemon')
+  });
+
 
 app.listen(PORT, () => {
   console.log("port " + PORT + " I choose you!");
