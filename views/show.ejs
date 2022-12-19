@@ -4,20 +4,18 @@
 <%- include('./partials/head.ejs') %>
 
 <body><div class="cell">
-    <img src="<% if (id.img){
-        %> <%=
-             id.img
-             %>
-        <%}else{%>
-            pokeball.png
-            <%}%> ">
+    
+    <img src="<%=id.img%>"/>
+     
+    
+       
     #<%= id.id %> <%= id.name%> 
     <br>
     <%= id.misc.classification %>
     <br>
     type: <%= id.type%>
     <br>
-    <a href="/pokemon/<%= parseInt(id.id)-1%>/edit">Edit this pokemon</a>
+    <a href="/pokemon/<%= parseInt(id.id)%>/edit">Edit this pokemon</a>
     <form action="/pokemon/<%= parseInt(id.id)-1%>?_method=DELETE" method="POST">
         <input type="submit" value="Delete this pokemon" /></form>
     <a href="/pokemon">Return Home</a>

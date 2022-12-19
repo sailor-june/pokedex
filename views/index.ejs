@@ -16,13 +16,11 @@
     <a href="/pokemon/<%=i%>">
    
     <img class="index-photo"
-   src= "<% if (allPokes[i].img){
-    %> <%=
-         allPokes[i].img
-         %>
+   <% if (allPokes[i].img){%>
+    src= "<%= allPokes[i].img %>"/>
     <%}else{%>
-        pokeball.png
-        <%}%> "/> 
+        src = "pokeball.png"/>
+        <%}%>  
     </a><div class="info">
     #<%= allPokes[i].id%> <%= allPokes[i].name%>
     </div>

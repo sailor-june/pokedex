@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<%- include('./partials/head.ejs') %>
-  
+  <%- include('./partials/head.ejs') %>
 
   <body>
-    <div class="cell">
-      <p>NEW POKEMON</p>
-      <form action="/pokemon/" method="post">
-        Name: <input type="text" name="name" value=""/> 
-        Type: <input type="text" name="type" value=""/>
-        Classification: <input type="text" name="classification" value=""/>
-        <input type="submit" name="" value="Submit Changes"/>
-        
-      </form>
-      <a href="/pokemon">Return Home</a>
+    <div class="container">
+      <div class="cell">
+        <p>NEW POKEMON</p>
+        <form action="/pokemon/" method="post">
+          Name: <input type="text" name="name" value="" /> Type:
+          <input type="text" name="type" value="" /> Classification:
+          <input type="text" name="classification" value="" />
+          Link to image:
+          <input type="text" name="img" value="" >
+          <input type="submit" name="" value="Submit Changes" />
+        </form>
+        <a href="/pokemon">Return Home</a>
+      </div>
     </div>
   </body>
 </html>
